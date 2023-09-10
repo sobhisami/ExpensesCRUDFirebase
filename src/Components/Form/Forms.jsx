@@ -13,7 +13,7 @@ const Forms = ({saveItem}) => {
       e.preventDefault()
       console.log(Data);
         if (checkData()) {
-          axios.post("https://expenses-app-32e19-default-rtdb.firebaseio.com/CRUD.json",Data)
+          axios.post("https://expenses-context-default-rtdb.firebaseio.com/fire.json",Data)
           .then(res=>{
             Data.id=res.data.name;
             console.log("success adding");

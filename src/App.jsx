@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from './image/m1.png'
-import { Forms, Input, Label, Table } from './Components';
+import { Forms, Input, Label, Pagination, Table } from './Components';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 const App = () => {
@@ -18,9 +18,8 @@ const App = () => {
       let update=dataSet.map(e=>e.id===id ? DataUpdate : e)
       setDateSet(update);
     }
- 
     let fetchData=()=>{
-      axios.get("https://expenses-app-32e19-default-rtdb.firebaseio.com/CRUD.json")
+      axios.get("https://expenses-context-default-rtdb.firebaseio.com/fire.json")
       .then(res=>{
       console.log(res.data);
       let Data=[];
@@ -74,6 +73,7 @@ const App = () => {
            <Input type={"text"} onChange={e=>setSearch(e.target.value)} value={search} className="form-control addSearch"  placeholder="Search..."/>
         </div>
       <Table dataSet={searchHandler} DeleteItem={DeleteItem} updateItem={updateItem}/>
+      <Pagination/>
       </div>
       </div>
     </div>

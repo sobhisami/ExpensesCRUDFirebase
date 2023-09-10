@@ -23,8 +23,7 @@ const Edit = ({updateItem,data}) => {
     e.preventDefault();
     updateItem(id, DataUpdate);
     console.log(DataUpdate, id);
-    
-    axios.put(`https://expenses-app-32e19-default-rtdb.firebaseio.com/CRUD/${id}.json`, DataUpdate)
+    axios.put(`https://expenses-context-default-rtdb.firebaseio.com/fire/${id}.json`, DataUpdate)
       .then(res => {
         console.log("Success Edit");
       })

@@ -16,7 +16,7 @@ const Trow = ({data,DeleteItem,updateItem}) => {
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete(`https://expenses-app-32e19-default-rtdb.firebaseio.com/CRUD/${data.id}.json`)
+        axios.delete(`https://expenses-context-default-rtdb.firebaseio.com/fire/${data.id}.json`)
         .then(res=>{
           DeleteItem(data.id);
           console.log("succuss Delete");
